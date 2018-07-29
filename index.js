@@ -15,8 +15,7 @@ class Driver {
   }
 
   passengers() {
-    let trips = this.trips().map(trip => trip.passengerId);
-    return store.passengers.filter(passenger => trips.includes(passenger.id));
+    return this.trips().map(trip => trip.passenger());
   }
 }
 
@@ -32,8 +31,7 @@ class Passenger {
   }
 
   drivers() {
-    let trips = this.trips().map(trip => trip.driverId);
-    return store.drivers.filter(driver => trips.includes(driver.id));
+    return this.trips().map(trip => trip.driver());
   }
 }
 
